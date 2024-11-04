@@ -1,0 +1,14 @@
+$TTL    86400
+@       IN      SOA     ns.galaxia.lan. admin.galaxia.lan. (
+                          2023110401 ; Serial
+                          3600       ; Refresh
+                          1800       ; Retry
+                          604800     ; Expire
+                          86400      ; Negative Cache TTL
+)
+;
+@       IN      NS      ns.galaxia.lan.
+ns      IN      A       192.168.20.1  ; Cambia por IP do servidor DNS
+
+aaylasecura     IN      A       192.168.20.239
+yarua           IN      A       192.168.20.238

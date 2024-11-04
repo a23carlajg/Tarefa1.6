@@ -1,0 +1,12 @@
+;$TTL    604800
+@       IN      SOA     leia.starwars.lan. admin.imperio.starwars.lan. (
+                              2023102501 ; Serial
+                                   604800 ; Refresh
+                                    86400 ; Retry
+                                  2419200 ; Expire
+                                   604800 ) ; Negative Cache TTL
+;
+@           IN      NS      leia.starwars.lan.
+
+tsuichoi    IN      A       192.168.20.225
+bultarswan  IN      A       192.168.20.226

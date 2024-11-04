@@ -1,0 +1,36 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+//key "transfer" {
+//	algorithm hmac-sha256;
+//	secret "VV74Vp+SZ915pMNRQfUvLxI8XJBGeSjCa09vO0CihNg=";
+//};
+
+key "rndc-key" {
+	algorithm hmac-sha256;
+	secret "DmK/kuYQkQY+D/4CQpq86Dys5FkDkgQ6HHibk8XahF8=";
+};
+
+
+zone "starwars.lan" {
+    type master;
+    file "/etc/bind/db.starwars.lan";
+    allow-transfer { key "transfer"; 192.168.20.11; };
+};
+
+zone "20.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.20.168.192";
+    allow-transfer { key "transfer"; 192.168.20.11; };
+};
+
+zone "galaxia.lan" {
+    type master;
+    file "/var/cache/bind/galaxia.lan.db";
+    allow-update { key "rndc-key"; };  
+};
